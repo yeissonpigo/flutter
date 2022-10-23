@@ -36,11 +36,12 @@ class GameScreen extends StatelessWidget {
               )),
           ElevatedButton(
               onPressed: () {
-                createMatriz(int.parse(_rowQuantity.text));
+                List<List<Char>> matrizToBeSent = createMatriz(int.parse(_rowQuantity.text));
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => LetterScreen(
                         columnQuantity: int.parse(_columnQuantity.text),
-                        rowQuantity: int.parse(_rowQuantity.text))));
+                        rowQuantity: int.parse(_rowQuantity.text),
+                        matriz: matrizToBeSent)));
               },
               child: Text("Next"))
         ],

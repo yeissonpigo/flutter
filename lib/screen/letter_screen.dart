@@ -7,10 +7,8 @@ import 'package:flutter/src/widgets/framework.dart';
 class LetterScreen extends StatelessWidget {
   final int columnQuantity;
   final int rowQuantity;
-  List<List<Char>> _matriz = [];
-  LetterScreen({required this.columnQuantity, required this.rowQuantity});
-
-  
+  final List<List<Char>> matriz = [];
+  LetterScreen({required this.columnQuantity, required this.rowQuantity, required matriz});
 
   @override
   Widget build(BuildContext context) => Scaffold(
