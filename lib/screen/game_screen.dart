@@ -1,11 +1,19 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:rickapp/screen/letter_screen.dart';
 
 class GameScreen extends StatelessWidget {
   TextEditingController _rowQuantity = new TextEditingController();
   TextEditingController _columnQuantity = new TextEditingController();
-  void _setRows(rowQuantity) {
-    rowQuantity = rowQuantity;
+  List<List<Char>> _matriz = [];
+
+  List<List<Char>> createMatriz(int rowQuantity){
+    for(int i = 0; i < rowQuantity; i++){
+      List<Char> row = [];
+      _matriz.add(row);
+    }
+    return _matriz;
   }
 
   @override
@@ -28,6 +36,7 @@ class GameScreen extends StatelessWidget {
               )),
           ElevatedButton(
               onPressed: () {
+                createMatriz(int.parse(_rowQuantity.text));
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => LetterScreen(
                         columnQuantity: int.parse(_columnQuantity.text),
