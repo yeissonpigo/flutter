@@ -12,7 +12,7 @@ class IndexScreen extends StatelessWidget {
         Center(
           child: 
             ElevatedButton(
-              child: Text("Answer100"),
+              child: Text("Sopa de letras"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => GameScreen()));
               }),
